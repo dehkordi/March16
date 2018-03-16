@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: OAuth2SpringBootDemo
+
+
+security:
+    oauth2:
+        client:
+            clientId: client_id
+            clientSecret: secret
+            apiUrl: https://localhost:8080/testData/data
+            accessTokenUri: https://localhost:8080/oauth/token  
+            scope: system/*.*

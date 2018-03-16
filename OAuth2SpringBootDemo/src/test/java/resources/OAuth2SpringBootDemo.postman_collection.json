@@ -1,0 +1,329 @@
+{
+	"info": {
+		"name": "OAuth2SpringBootDemo",
+		"_postman_id": "0668c484-ac20-4499-b71e-b30c011910da",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/date",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"date"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Time",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/time",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"time"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "my-trusted-client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/oauth/token?grant_type=password&username=public&password=pass",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"equals": true
+						},
+						{
+							"key": "username",
+							"value": "public",
+							"equals": true
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"john\",\n\t\"password\" : \"pass\",\n\t\"roles\" : [\n\t\t{\"name\" : \"USER\"}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/register?access_token=b670ea41-78c1-45d3-9d3c-53cb6fd1d548",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "b670ea41-78c1-45d3-9d3c-53cb6fd1d548",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"james\",\n\t\"password\" : \"pass\",\n\t\"roles\" : [\n\t\t{\"name\" : \"USER\"}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/delete/john?access_token=b670ea41-78c1-45d3-9d3c-53cb6fd1d548",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delete",
+						"john"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "b670ea41-78c1-45d3-9d3c-53cb6fd1d548",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/admin?access_token=b670ea41-78c1-45d3-9d3c-53cb6fd1d548",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "b670ea41-78c1-45d3-9d3c-53cb6fd1d548",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://localhost:8443/users?access_token=e4483aa0-5223-4bd0-a8f0-d38d23866c22",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "e4483aa0-5223-4bd0-a8f0-d38d23866c22",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Private",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://localhost:8443/private?access_token=b670ea41-78c1-45d3-9d3c-53cb6fd1d548",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"private"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "b670ea41-78c1-45d3-9d3c-53cb6fd1d548",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Owndata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/owndata?access_token=4fe86fc2-268f-4b37-ac08-e8fcac391499",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"owndata"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "4fe86fc2-268f-4b37-ac08-e8fcac391499",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
